@@ -9,7 +9,7 @@ const Login = ({ navigation }) => {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post('http://192.168.61.144:4000/login', { email, password });
+            const response = await axios.post('http://192.168.170.144:4000/login', { email, password });
     
             if (response.data.success) {
                 navigation.dispatch(StackActions.replace('Main', { email })); // Pass email here
@@ -34,7 +34,7 @@ const Login = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Image source={require('./assets/autologo.png')} style={styles.logo} />
-            <Text style={styles.appName}>Auto CaseX</Text>
+            <Text style={styles.appName}>Medicose</Text>
             <View style={styles.inputView}>
                 <TextInput
                     style={styles.inputText}
@@ -68,7 +68,7 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#2a2a2a',
+        backgroundColor: '#00ff7f',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#465881',
         borderRadius: 25,
         height: 50,
+        color:'white',
         marginBottom: 20,
         justifyContent: 'center',
         paddingHorizontal: 20,
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     },
     loginBtn: {
         width: '100%',
-        backgroundColor: '#00ff7f',
+        backgroundColor: '#7fff00',
         borderRadius: 25,
         height: 50,
         alignItems: 'center',
@@ -126,3 +127,4 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
+
